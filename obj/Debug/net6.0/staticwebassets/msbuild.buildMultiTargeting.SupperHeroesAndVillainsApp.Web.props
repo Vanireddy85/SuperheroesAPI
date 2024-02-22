@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SupperHeroesAndVillainsApp.Web.props" />
+</Project>

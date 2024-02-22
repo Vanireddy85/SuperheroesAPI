@@ -1,0 +1,50 @@
+﻿@model SearchResponseViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (Model.Results == null)
+{
+    <img class="img-fluid mb-3 pt-xl-0 pt-lg-0 pt-md-0 pt-sm-4 pt-5" src="~/images/HeroesAndVillains.png" alt="All SuperHeroes Image" />
+}
+
+<partial name="_SearchCharacter" />
+
+@if (Model.Error != null)
+{
+
+    string notFoundMesssage = Model.Error.ToLower().Contains("not found")
+        ? "Please make sure you did not misspell the Super Hero´s or Villain´s name or try with another name."
+        : "Please contact the tech support team.";
+
+    <div class="jumbotron mt-5 text-center">
+        <h1 class="display-3">
+            <span class="fa fa-frown"></span>
+            ¡We are sorry!
+        </h1>
+        <p class="lead">@Model.Error.. @notFoundMesssage</p>
+    </div>
+}
+
+
+@if (Model.Results != null)
+{
+    <div class="row mx-auto pb-5 mt-4">
+
+        @foreach (var character in Model.Results)
+        {
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-3 mx-auto">
+                <a href="@Url.Action("character","Home", new { id = character.Id })">
+                    <img class="img-fluid img-max-height-300 cursor-puntero" data-toggle="tooltip" title="Click to wath details" src="@character.Image.Url" alt="@character.Name image" />
+                </a>
+                <h5 class="mb-0">@character.Name</h5>
+                <small>Gender: @character.Appearance.Gender</small><br />
+            </div>
+        }
+    </div>
+}
+
+
+
+

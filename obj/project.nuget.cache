@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "S7woqca9rDpMOXNGiV7wrV9EKwzVqS/EE3WLtT65r2ufNl9GevcGdGx6+9hqs+6yj4bUa5Iv1fgeC+Mm3pEvCQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ravi_\\OneDrive\\Desktop\\SuperHeroesAndVillainsWebApp-master\\SuperHeroesAndVillainsApp.Web\\SupperHeroesAndVillainsApp.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ravi_\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
